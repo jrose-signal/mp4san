@@ -14,3 +14,16 @@ bytes = "1.3.0"
 env_logger = "0.10.0"
 futures-util = { version = "0.3.28", default-features = false, features = ["io"] }
 log = "0.4.17"
+
+# For dump-video-frames-mac
+block2 = { version = "0.4.0", optional = true }
+core-foundation = { version = "0.9.4", optional = true }
+hex-literal = { version = "0.4.1", optional = true }
+objc2 = { version = "0.5.0", optional = true }
+
+[features]
+dump-video-frames-mac = ["block2", "core-foundation", "hex-literal", "objc2"]
+
+[[bin]]
+name = "dump-video-frames-mac"
+required-features = ["dump-video-frames-mac"]
